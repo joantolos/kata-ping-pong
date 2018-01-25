@@ -15,7 +15,7 @@ public class MarsMap {
         this.renderMap(position, compass);
     }
 
-    public Boolean renderMap(Position position, Compass compass) {
+    public void renderMap(Position position, Compass compass) {
         IntStream.range(0, Mars.SIZE).forEach(currentX -> {
             IntStream.range(0, Mars.SIZE).forEach(currentY -> {
                 if(currentX == position.getX() && currentY == position.getY()){
@@ -29,7 +29,6 @@ public class MarsMap {
                 }
             });
         });
-        return true;
     }
 
     public Boolean isPositionAvailable(Position position){

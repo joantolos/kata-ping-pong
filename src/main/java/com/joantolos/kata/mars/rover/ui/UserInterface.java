@@ -20,6 +20,7 @@ public class UserInterface {
         System.out.println("Your rover is located by default at the 0, 0 position and it's facing North.");
         System.out.println("Every run of the program places a maximum of four random obstacles on the planet surface, represented by #");
         System.out.println("Your position on the planet is represented by the initial where the rover is facing (N, S, W or E)");
+        System.out.println("Type exit to stop the exploration.");
         return true;
     }
 
