@@ -30,7 +30,7 @@ public class UserInterface {
     }
 
     public Boolean exit() {
-        System.out.print("\nBye!\n\n");
+        System.out.print("\nDisconnected from Mars rover\n\n");
         return true;
     }
 

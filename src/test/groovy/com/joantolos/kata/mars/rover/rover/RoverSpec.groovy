@@ -62,15 +62,46 @@ class RoverSpec extends Specification {
     def 'Mars Rover should move left' () {
 
         given: 'Moving a new rover left'
-        Rover rover = new Rover(1,1,Compass.EAST)
+        Rover rover = new Rover(startingX, startingY, direction)
         rover.moveLeft()
 
+        expect: 'The correct position'
+        rover.getPosition().x == expectingX
+        rover.getPosition().y == expectingY
+
+        where: 'The rover is facing all possible directions'
+        startingX   |   startingY   ||   direction          |   expectingX  |   expectingY
+        1           |   1           ||   Compass.NORTH      |   0           |   1
+        1           |   1           ||   Compass.SOUTH      |   0           |   1
+        1           |   1           ||   Compass.EAST       |   2           |   1
+        1           |   1           ||   Compass.WEST       |   2           |   1
+
+        0           |   0           ||   Compass.SOUTH      |   9           |   0
+        0           |   0           ||   Compass.NORTH      |   9           |   0
+        9           |   9           ||   Compass.EAST       |   0           |   9
+        9           |   9           ||   Compass.WEST       |   0           |   9
     }
 
     def 'Mars Rover should move right' () {
 
         given: 'Moving a new rover right'
-        Rover rover = new Rover(1,1,Compass.WEST)
+        Rover rover = new Rover(startingX, startingY, direction)
         rover.moveRight()
+
+        expect: 'The correct position'
+        rover.getPosition().x == expectingX
+        rover.getPosition().y == expectingY
+
+        where: 'The rover is facing all possible directions'
+        startingX   |   startingY   ||   direction          |   expectingX  |   expectingY
+        1           |   1           ||   Compass.NORTH      |   2           |   1
+        1           |   1           ||   Compass.SOUTH      |   2           |   1
+        1           |   1           ||   Compass.EAST       |   0           |   1
+        1           |   1           ||   Compass.WEST       |   0           |   1
+
+        9           |   9           ||   Compass.SOUTH      |   0           |   9
+        9           |   9           ||   Compass.NORTH      |   0           |   9
+        0           |   0           ||   Compass.EAST       |   9           |   0
+        0           |   0           ||   Compass.WEST       |   9           |   0
     }
 }

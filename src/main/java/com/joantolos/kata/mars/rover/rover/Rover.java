@@ -71,11 +71,53 @@ public class Rover {
     }
 
     protected Boolean moveLeft() {
-        return true;
+        Position positionProposal;
+        switch (currentDirection){
+            case NORTH:
+                positionProposal = new Position(decrementX(), this.currentPosition.getY());
+                break;
+            case SOUTH:
+                positionProposal = new Position(decrementX(), this.currentPosition.getY());
+                break;
+            case EAST:
+                positionProposal = new Position(incrementX(), this.currentPosition.getY());
+                break;
+            case WEST:
+                positionProposal = new Position(incrementX(), this.currentPosition.getY());
+                break;
+            default:
+                positionProposal = currentPosition;
+        }
+        if(this.marsMap.isPositionAvailable(positionProposal)){
+            this.currentPosition = positionProposal;
+            return true;
+        }
+        return false;
     }
 
     protected Boolean moveRight() {
-        return true;
+        Position positionProposal;
+        switch (currentDirection){
+            case NORTH:
+                positionProposal = new Position(incrementX(), this.currentPosition.getY());
+                break;
+            case SOUTH:
+                positionProposal = new Position(incrementX(), this.currentPosition.getY());
+                break;
+            case EAST:
+                positionProposal = new Position(decrementX(), this.currentPosition.getY());
+                break;
+            case WEST:
+                positionProposal = new Position(decrementX(), this.currentPosition.getY());
+                break;
+            default:
+                positionProposal = currentPosition;
+        }
+        if(this.marsMap.isPositionAvailable(positionProposal)){
+            this.currentPosition = positionProposal;
+            return true;
+        }
+        return false;
     }
 
     private Integer incrementY() {
