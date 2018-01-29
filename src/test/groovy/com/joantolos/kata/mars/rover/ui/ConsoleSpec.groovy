@@ -5,12 +5,12 @@ import com.joantolos.kata.mars.rover.rover.MarsMap
 import com.joantolos.kata.mars.rover.utils.Compass
 import spock.lang.Specification
 
-class UserInterfaceSpec extends Specification {
+class ConsoleSpec extends Specification {
 
-    UserInterface ui
+    Console ui
 
     def setup() {
-        ui = new UserInterface()
+        ui = new Console()
     }
 
     def 'User Interface should print prompt'(){

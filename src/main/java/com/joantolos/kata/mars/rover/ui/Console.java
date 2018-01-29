@@ -1,10 +1,11 @@
 package com.joantolos.kata.mars.rover.ui;
 
 import com.joantolos.kata.mars.rover.domain.Mars;
+import com.joantolos.kata.mars.rover.rover.RemoteControl;
 
 import java.util.stream.IntStream;
 
-public class UserInterface {
+public class Console {
 
     public Boolean prompt(){
         System.out.println("  __    __     _                           ");

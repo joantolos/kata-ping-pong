@@ -2,7 +2,6 @@ package com.joantolos.kata.mars.rover.rover;
 
 import com.joantolos.kata.mars.rover.domain.Mars;
 import com.joantolos.kata.mars.rover.domain.Position;
-import com.joantolos.kata.mars.rover.ui.UserInterface;
 import com.joantolos.kata.mars.rover.utils.Compass;
 
 public class Rover {
@@ -10,15 +9,13 @@ public class Rover {
     private MarsMap marsMap;
     private Position currentPosition;
     private Compass currentDirection;
+    private RemoteControl remoteControl;
 
     public Rover(Integer x, Integer y, Compass direction){
         this.currentPosition = new Position(x, y);
         this.currentDirection = direction;
         this.marsMap = new MarsMap(this.currentPosition, this.currentDirection);
-    }
-
-    public Position getPosition() {
-        return this.currentPosition;
+        this.remoteControl = new RemoteControl(this);
     }
 
     protected Boolean move(Movements movement){
@@ -116,5 +113,17 @@ public class Rover {
             pointCandidate = 0;
         }
         return pointCandidate;
+    }
+
+    public Position getPosition() {
+        return this.currentPosition;
+    }
+
+    public Compass getDirection() {
+        return currentDirection;
+    }
+
+    public RemoteControl getRemote() {
+        return this.remoteControl;
     }
 }
