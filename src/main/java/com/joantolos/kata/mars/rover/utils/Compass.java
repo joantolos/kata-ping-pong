@@ -7,13 +7,13 @@ public enum Compass {
     WEST("\u2190"),
     EAST("\u2192");
 
-    private String initial;
+    private String symbol;
 
-    Compass(String initial){
-        this.initial = initial;
+    Compass(String symbol){
+        this.symbol = symbol;
     }
 
-    public String getInitial() {
-        return initial;
+    public String getSymbol() {
+        return symbol;
     }
 }

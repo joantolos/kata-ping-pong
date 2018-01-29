@@ -1,5 +1,7 @@
 package com.joantolos.kata.mars.rover.rover;
 
+import java.util.stream.Stream;
+
 public enum Movements {
 
     FORWARD("f"),
@@ -15,5 +17,12 @@ public enum Movements {
 
     Movements(String command) {
         this.command = command;
+    }
+
+    public static Movements byCommand(String targetCommand) {
+        return Stream.of(Movements.values())
+                .filter(f -> f.command.equals(targetCommand))
+                .findFirst()
+                .orElse(null);
     }
 }

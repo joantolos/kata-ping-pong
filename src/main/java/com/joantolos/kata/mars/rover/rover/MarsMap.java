@@ -19,7 +19,7 @@ public class MarsMap {
         IntStream.range(0, Mars.SIZE).forEach(currentX -> {
             IntStream.range(0, Mars.SIZE).forEach(currentY -> {
                 if(currentX == position.getX() && currentY == position.getY()){
-                    coordinates[currentX][currentY] = "[ " + compass.getInitial() + " ]";
+                    coordinates[currentX][currentY] = "[ " + compass.getSymbol() + " ]";
                 } else {
                     if(isPositionAvailable(new Position(currentX, currentY))) {
                         coordinates[currentX][currentY] = "[   ]";
