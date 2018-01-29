@@ -35,6 +35,7 @@ public class UserInterface {
     }
 
     public Boolean printMap(String[][] coordinates){
+        System.out.println();
         IntStream.range(0, Mars.SIZE).forEach(currentX -> {
             IntStream.range(0, Mars.SIZE).forEach(currentY -> System.out.print(coordinates[currentX][currentY]));
             System.out.println();

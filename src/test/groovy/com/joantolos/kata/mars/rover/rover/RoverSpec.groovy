@@ -17,7 +17,7 @@ class RoverSpec extends Specification {
 
         given: 'Moving a new rover forward'
         Rover rover = new Rover(startingX, startingY, direction)
-        rover.moveForward()
+        rover.move(Movements.FORWARD)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
@@ -40,7 +40,7 @@ class RoverSpec extends Specification {
 
         given: 'Moving a new rover forward'
         Rover rover = new Rover(startingX, startingY, direction)
-        rover.moveBackward()
+        rover.move(Movements.BACKWARD)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
@@ -63,7 +63,7 @@ class RoverSpec extends Specification {
 
         given: 'Moving a new rover left'
         Rover rover = new Rover(startingX, startingY, direction)
-        rover.moveLeft()
+        rover.move(Movements.LEFT)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
@@ -86,7 +86,7 @@ class RoverSpec extends Specification {
 
         given: 'Moving a new rover right'
         Rover rover = new Rover(startingX, startingY, direction)
-        rover.moveRight()
+        rover.move(Movements.RIGHT)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX

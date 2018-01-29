@@ -20,7 +20,29 @@ public class Rover {
         return this.currentPosition;
     }
 
-    protected Boolean moveForward(){
+    protected Boolean move(Movements movement){
+        switch (movement) {
+            case FORWARD:
+                return moveForward();
+            case BACKWARD:
+                return moveBackward();
+            case LEFT:
+                return moveLeft();
+            case RIGHT:
+                return moveRight();
+            case NORTH:
+                this.currentDirection = Compass.NORTH;
+            case SOUTH:
+                this.currentDirection = Compass.SOUTH;
+            case EAST:
+                this.currentDirection = Compass.EAST;
+            case WEST:
+                this.currentDirection = Compass.WEST;
+        }
+        return false;
+    }
+
+    private Boolean moveForward(){
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
@@ -45,7 +67,7 @@ public class Rover {
         return false;
     }
 
-    protected Boolean moveBackward() {
+    private Boolean moveBackward() {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
@@ -70,7 +92,7 @@ public class Rover {
         return false;
     }
 
-    protected Boolean moveLeft() {
+    private Boolean moveLeft() {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
@@ -95,7 +117,7 @@ public class Rover {
         return false;
     }
 
-    protected Boolean moveRight() {
+    private Boolean moveRight() {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
