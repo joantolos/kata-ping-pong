@@ -7,17 +7,17 @@ import spock.lang.Specification
 
 class RemoteControlSpec extends Specification {
 
-    def 'Should send command stream to rover' (){
+    def 'Should send command stream to rover' () {
 
         given: 'A new rover'
         Rover rover = new Rover(0,0,Compass.NORTH)
 
-        when: 'Sending the command "left, right, East, backwards'
-        rover.getRemote().send('lrEb')
+        when: 'Sending the command "left, right, East, backwards, North, forwards, South, West'
+        rover.getRemote().send('lrEbNfSW')
 
         then:
-        rover.position == new Position(9, 0)
-        rover.direction == Compass.EAST
+        rover.position == new Position(9, 1)
+        rover.direction == Compass.WEST
     }
 
 }
