@@ -1,7 +1,7 @@
 package com.joantolos.kata.mars.rover.ui;
 
 import com.joantolos.kata.mars.rover.domain.Mars;
-import com.joantolos.kata.mars.rover.rover.RemoteControl;
+import com.joantolos.kata.mars.rover.rover.Rover;
 
 import java.util.stream.IntStream;
 
@@ -18,7 +18,7 @@ public class Console {
         System.out.println("  \\__\\___/  \\/    \\/\\__,_|_|  |___/        ");
         System.out.println("                                           ");
         System.out.println("");
-        System.out.println("Your rover is located by default at the 0, 0 position and it's facing North.");
+        System.out.println("Your rover is located by default at the 1, 1 position and it's facing North.");
         System.out.println("Every run of the program places a maximum of four random obstacles on the planet surface, represented by #");
         System.out.println("Your position on the planet is represented by the initial where the rover is facing (N, S, W or E)");
         System.out.println("Type exit to stop the exploration.");
@@ -35,10 +35,10 @@ public class Console {
         return true;
     }
 
-    public Boolean printMap(String[][] coordinates){
+    public Boolean printMap(Rover rover){
         System.out.println();
-        IntStream.range(0, Mars.SIZE).forEach(currentX -> {
-            IntStream.range(0, Mars.SIZE).forEach(currentY -> System.out.print(coordinates[currentX][currentY]));
+        IntStream.range(1, Mars.SIZE).forEach(currentY -> {
+            IntStream.range(1, Mars.SIZE).forEach(currentX -> System.out.print(rover.getMarsMap().getCoordinates()[currentX][currentY]));
             System.out.println();
         });
         return true;

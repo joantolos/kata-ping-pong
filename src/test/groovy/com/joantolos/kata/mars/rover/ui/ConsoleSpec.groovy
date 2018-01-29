@@ -2,6 +2,7 @@ package com.joantolos.kata.mars.rover.ui
 
 import com.joantolos.kata.mars.rover.domain.Position
 import com.joantolos.kata.mars.rover.rover.MarsMap
+import com.joantolos.kata.mars.rover.rover.Rover
 import com.joantolos.kata.mars.rover.utils.Compass
 import spock.lang.Specification
 
@@ -29,10 +30,10 @@ class ConsoleSpec extends Specification {
     }
 
     def 'User Interface should print the mars map'(){
-        given: 'A map position'
-        MarsMap marsMap = new MarsMap(new Position(3,5), Compass.NORTH)
+        given: 'A new rover'
+        Rover rover = new Rover(3,5, Compass.NORTH, new Console())
 
         expect:
-        ui.printMap(marsMap.coordinates)
+        ui.printMap(rover)
     }
 }
