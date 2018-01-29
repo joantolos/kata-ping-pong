@@ -12,10 +12,10 @@ public class MarsMap {
 
     public MarsMap(Position position, Compass compass){
         this.coordinates = new String[Mars.SIZE][Mars.SIZE];
-        this.renderMap(position, compass);
+        this.render(position, compass);
     }
 
-    public void renderMap(Position position, Compass compass) {
+    public void render(Position position, Compass compass) {
         IntStream.range(0, Mars.SIZE).forEach(currentX -> {
             IntStream.range(0, Mars.SIZE).forEach(currentY -> {
                 if(currentX == position.getX() && currentY == position.getY()){
@@ -24,7 +24,7 @@ public class MarsMap {
                     if(isPositionAvailable(new Position(currentX, currentY))) {
                         coordinates[currentX][currentY] = "[   ]";
                     } else {
-                        coordinates[currentX][currentY] = "[ # ]";
+                        coordinates[currentX][currentY] = "[ \u1040 ]";
                     }
                 }
             });

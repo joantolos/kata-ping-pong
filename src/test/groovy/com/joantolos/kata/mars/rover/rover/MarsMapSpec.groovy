@@ -15,15 +15,15 @@ class MarsMapSpec extends Specification {
 
     def 'Mars map should return initial coordinates state' () {
         expect:
-        marsMap.getCoordinates()[0][0] == '[ N ]'
+        marsMap.getCoordinates()[0][0] == '[ ↑ ]'
     }
 
     def 'Mars map should return new position' () {
         given: 'I mark the new Mars rover position'
-        marsMap.renderMap(new Position(0, 1), Compass.EAST)
+        marsMap.render(new Position(0, 1), Compass.EAST)
 
         expect:
         marsMap.getCoordinates()[0][0] == '[   ]'
-        marsMap.getCoordinates()[0][1] == '[ E ]'
+        marsMap.getCoordinates()[0][1] == '[ → ]'
     }
 }

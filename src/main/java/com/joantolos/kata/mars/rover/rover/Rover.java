@@ -1,10 +1,8 @@
 package com.joantolos.kata.mars.rover.rover;
 
 import com.joantolos.kata.mars.rover.domain.Mars;
-import com.joantolos.kata.mars.rover.utils.Compass;
 import com.joantolos.kata.mars.rover.domain.Position;
-import com.joantolos.kata.mars.rover.utils.Magnitude;
-import com.joantolos.kata.mars.rover.utils.Point;
+import com.joantolos.kata.mars.rover.utils.Compass;
 
 public class Rover {
 
