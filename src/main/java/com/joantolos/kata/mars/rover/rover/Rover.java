@@ -15,7 +15,7 @@ public class Rover {
     public Rover(Integer x, Integer y, Compass direction){
         this.currentPosition = new Position(x, y);
         this.currentDirection = direction;
-        this.marsMap = new MarsMap(new Position(x, y), direction);
+        this.marsMap = new MarsMap(this.currentPosition, this.currentDirection);
     }
 
     public Position getPosition() {
@@ -26,16 +26,16 @@ public class Rover {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
-                positionProposal = new Position(this.currentPosition.getX(), move(Magnitude.INCREMENT, Point.Y));
+                positionProposal = new Position(this.currentPosition.getX(), this.increment(this.currentPosition.getY()));
                 break;
             case SOUTH:
-                positionProposal = new Position(this.currentPosition.getX(), move(Magnitude.DECREMENT, Point.Y));
+                positionProposal = new Position(this.currentPosition.getX(), this.decrement(this.currentPosition.getY()));
                 break;
             case EAST:
-                positionProposal = new Position(move(Magnitude.INCREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case WEST:
-                positionProposal = new Position(move(Magnitude.DECREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             default:
                 positionProposal = currentPosition;
@@ -51,16 +51,16 @@ public class Rover {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
-                positionProposal = new Position(this.currentPosition.getX(), move(Magnitude.DECREMENT, Point.Y));
+                positionProposal = new Position(this.currentPosition.getX(), this.decrement(this.currentPosition.getY()));
                 break;
             case SOUTH:
-                positionProposal = new Position(this.currentPosition.getX(), move(Magnitude.INCREMENT, Point.Y));
+                positionProposal = new Position(this.currentPosition.getX(), this.increment(this.currentPosition.getY()));
                 break;
             case EAST:
-                positionProposal = new Position(move(Magnitude.DECREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case WEST:
-                positionProposal = new Position(move(Magnitude.INCREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             default:
                 positionProposal = currentPosition;
@@ -76,16 +76,16 @@ public class Rover {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
-                positionProposal = new Position(move(Magnitude.DECREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case SOUTH:
-                positionProposal = new Position(move(Magnitude.DECREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case EAST:
-                positionProposal = new Position(move(Magnitude.INCREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case WEST:
-                positionProposal = new Position(move(Magnitude.INCREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             default:
                 positionProposal = currentPosition;
@@ -101,16 +101,16 @@ public class Rover {
         Position positionProposal;
         switch (currentDirection){
             case NORTH:
-                positionProposal = new Position(move(Magnitude.INCREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case SOUTH:
-                positionProposal = new Position(move(Magnitude.INCREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case EAST:
-                positionProposal = new Position(move(Magnitude.DECREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             case WEST:
-                positionProposal = new Position(move(Magnitude.DECREMENT, Point.X), this.currentPosition.getY());
+                positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                 break;
             default:
                 positionProposal = currentPosition;
@@ -122,41 +122,20 @@ public class Rover {
         return false;
     }
 
-    private Integer move(Magnitude magnitude, Point point) {
-        Integer newPointCandidate = 0;
-        switch (point) {
-            case X:
-                switch (magnitude) {
-                    case INCREMENT:
-                        newPointCandidate = this.currentPosition.getX() + 1;
-                        if(newPointCandidate > Mars.SIZE){
-                            newPointCandidate = 0;
-                        }
-                        break;
-                    case DECREMENT:
-                        newPointCandidate = this.currentPosition.getX() - 1;
-                        if(newPointCandidate < 0){
-                            newPointCandidate = Mars.SIZE;
-                        }
-                        break;
-                }
-                break;
-            case Y:
-                switch (magnitude) {
-                    case INCREMENT:
-                        newPointCandidate = this.currentPosition.getY() + 1;
-                        if(newPointCandidate > Mars.SIZE){
-                            newPointCandidate = 0;
-                        }
-                        break;
-                    case DECREMENT:
-                        newPointCandidate = this.currentPosition.getY() - 1;
-                        if(newPointCandidate < 0){
-                            newPointCandidate = Mars.SIZE;
-                        }
-                        break;
-                }
-                break;
+    private Integer decrement(Integer point) {
+        Integer newPointCandidate;
+        newPointCandidate = point - 1;
+        if (newPointCandidate < 0) {
+            newPointCandidate = Mars.SIZE;
+        }
+        return newPointCandidate;
+    }
+
+    private Integer increment(Integer point) {
+        Integer newPointCandidate;
+        newPointCandidate = point + 1;
+        if (newPointCandidate > Mars.SIZE) {
+            newPointCandidate = 0;
         }
         return newPointCandidate;
     }
