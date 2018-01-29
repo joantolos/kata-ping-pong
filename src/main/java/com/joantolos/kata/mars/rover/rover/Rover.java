@@ -66,7 +66,7 @@ public class Rover {
                         break;
                 }
                 break;
-            case RIGHT:
+            case LEFT:
                 switch (currentDirection){
                     case NORTH:
                     case SOUTH:
@@ -78,7 +78,7 @@ public class Rover {
                         break;
                 }
                 break;
-            case LEFT:
+            case RIGHT:
                 switch (currentDirection){
                     case NORTH:
                     case SOUTH:

@@ -16,11 +16,11 @@ class RoverSpec extends Specification {
         rover.getPosition()
     }
 
-    def 'Mars Rover should move backwards when facing every direction, including edge positions' () {
+    def 'Mars Rover should move forwards when facing every direction, including edge positions' () {
 
-        given: 'Moving a new rover backwards'
+        given: 'Moving a new rover forwards'
         Rover rover = new Rover(startingX, startingY, direction, new Console())
-        rover.move(Movements.BACKWARD)
+        rover.move(Movements.FORWARD)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
@@ -39,11 +39,11 @@ class RoverSpec extends Specification {
         0           |   0           ||   Compass.WEST       |   9           |   0
     }
 
-    def 'Mars Rover should move forwards when facing every direction, including edge positions' () {
+    def 'Mars Rover should move backwards when facing every direction, including edge positions' () {
 
-        given: 'Moving a new rover forwards'
+        given: 'Moving a new rover backwards'
         Rover rover = new Rover(startingX, startingY, direction, new Console())
-        rover.move(Movements.FORWARD)
+        rover.move(Movements.BACKWARD)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
@@ -62,11 +62,11 @@ class RoverSpec extends Specification {
         0           |   0           ||   Compass.EAST       |   9           |   0
     }
 
-    def 'Mars Rover should move right' () {
+    def 'Mars Rover should move left' () {
 
-        given: 'Moving a new rover right'
+        given: 'Moving a new rover left'
         Rover rover = new Rover(startingX, startingY, direction, new Console())
-        rover.move(Movements.RIGHT)
+        rover.move(Movements.LEFT)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
@@ -85,11 +85,11 @@ class RoverSpec extends Specification {
         9           |   9           ||   Compass.WEST       |   0           |   9
     }
 
-    def 'Mars Rover should move left' () {
+    def 'Mars Rover should move right' () {
 
-        given: 'Moving a new rover left'
+        given: 'Moving a new rover right'
         Rover rover = new Rover(startingX, startingY, direction, new Console())
-        rover.move(Movements.LEFT)
+        rover.move(Movements.RIGHT)
 
         expect: 'The correct position'
         rover.getPosition().x == expectingX
