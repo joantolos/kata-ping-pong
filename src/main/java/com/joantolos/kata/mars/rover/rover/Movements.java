@@ -8,10 +8,10 @@ public enum Movements {
     BACKWARD("b"),
     LEFT("l"),
     RIGHT("r"),
-    NORTH("N"),
-    SOUTH("S"),
-    EAST("E"),
-    WEST("W");
+    NORTH("n"),
+    SOUTH("s"),
+    EAST("e"),
+    WEST("w");
 
     private String command;
 

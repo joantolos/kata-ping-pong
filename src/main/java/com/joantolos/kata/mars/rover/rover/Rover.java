@@ -21,18 +21,20 @@ public class Rover {
 
     public Boolean sendSequence(String commandStream) {
         for(char command: commandStream.toCharArray()){
-            Boolean movementSuccess = move(Movements.byCommand(String.valueOf(command)));
+            Boolean movementSuccess = move(Movements.byCommand(String.valueOf(command).toLowerCase()));
+            marsMap.render(currentPosition, currentDirection);
             if(!movementSuccess){
                 this.console.print("Obstacle found! Aborting sequence...");
-                marsMap.render(currentPosition, currentDirection);
                 return false;
             }
         }
-        marsMap.render(currentPosition, currentDirection);
         return true;
     }
 
     protected Boolean move(Movements movement){
+        if(movement==null)
+            return false;
+
         Position positionProposal = this.currentPosition;
         switch (movement) {
             case FORWARD:
