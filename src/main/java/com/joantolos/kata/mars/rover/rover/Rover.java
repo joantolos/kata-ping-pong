@@ -24,6 +24,7 @@ public class Rover {
             Boolean movementSuccess = move(Movements.byCommand(String.valueOf(command)));
             if(!movementSuccess){
                 this.console.print("Obstacle found! Aborting sequence...");
+                marsMap.render(currentPosition, currentDirection);
                 return false;
             }
         }
@@ -69,24 +70,32 @@ public class Rover {
             case LEFT:
                 switch (currentDirection){
                     case NORTH:
-                    case SOUTH:
                         positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
                         break;
-                    case EAST:
-                    case WEST:
+                    case SOUTH:
                         positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
+                        break;
+                    case EAST:
+                        positionProposal = new Position(this.currentPosition.getX(), this.increment(this.currentPosition.getY()));
+                        break;
+                    case WEST:
+                        positionProposal = new Position(this.currentPosition.getX(), this.decrement(this.currentPosition.getY()));
                         break;
                 }
                 break;
             case RIGHT:
                 switch (currentDirection){
                     case NORTH:
-                    case SOUTH:
                         positionProposal = new Position(this.increment(this.currentPosition.getX()), this.currentPosition.getY());
                         break;
-                    case EAST:
-                    case WEST:
+                    case SOUTH:
                         positionProposal = new Position(this.decrement(this.currentPosition.getX()), this.currentPosition.getY());
+                        break;
+                    case EAST:
+                        positionProposal = new Position(this.currentPosition.getX(), this.decrement(this.currentPosition.getY()));
+                        break;
+                    case WEST:
+                        positionProposal = new Position(this.currentPosition.getX(), this.increment(this.currentPosition.getY()));
                         break;
                 }
                 break;

@@ -75,14 +75,14 @@ class RoverSpec extends Specification {
         where: 'The rover is facing all possible directions'
         startingX   |   startingY   ||   direction          |   expectingX  |   expectingY
         1           |   1           ||   Compass.NORTH      |   9           |   1
-        1           |   1           ||   Compass.SOUTH      |   9           |   1
-        1           |   1           ||   Compass.EAST       |   2           |   1
-        1           |   1           ||   Compass.WEST       |   2           |   1
+        1           |   1           ||   Compass.SOUTH      |   2           |   1
+        1           |   1           ||   Compass.EAST       |   1           |   2
+        1           |   1           ||   Compass.WEST       |   1           |   9
 
-        1           |   1           ||   Compass.SOUTH      |   9           |   1
         1           |   1           ||   Compass.NORTH      |   9           |   1
-        9           |   9           ||   Compass.EAST       |   0           |   9
-        9           |   9           ||   Compass.WEST       |   0           |   9
+        9           |   9           ||   Compass.SOUTH      |   0           |   9
+        1           |   1           ||   Compass.WEST       |   1           |   9
+        9           |   9           ||   Compass.EAST       |   9           |   0
     }
 
     def 'Mars Rover should move right' () {
@@ -98,14 +98,14 @@ class RoverSpec extends Specification {
         where: 'The rover is facing all possible directions'
         startingX   |   startingY   ||   direction          |   expectingX  |   expectingY
         1           |   1           ||   Compass.NORTH      |   2           |   1
-        1           |   1           ||   Compass.SOUTH      |   2           |   1
-        1           |   1           ||   Compass.EAST       |   9           |   1
-        1           |   1           ||   Compass.WEST       |   9           |   1
+        1           |   1           ||   Compass.SOUTH      |   9           |   1
+        1           |   1           ||   Compass.EAST       |   1           |   9
+        1           |   1           ||   Compass.WEST       |   1           |   2
 
-        9           |   9           ||   Compass.SOUTH      |   0           |   9
+        1           |   1           ||   Compass.SOUTH      |   9           |   1
         9           |   9           ||   Compass.NORTH      |   0           |   9
-        1           |   1           ||   Compass.EAST       |   9           |   1
-        1           |   1           ||   Compass.WEST       |   9           |   1
+        1           |   1           ||   Compass.EAST       |   1           |   9
+        9           |   9           ||   Compass.WEST       |   9           |   0
     }
 
     def 'Should send command stream to rover' () {
