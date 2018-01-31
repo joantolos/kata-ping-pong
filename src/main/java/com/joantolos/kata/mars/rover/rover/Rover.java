@@ -21,10 +21,16 @@ public class Rover {
 
     public Boolean sendSequence(String commandStream) {
         for(char command: commandStream.toCharArray()){
-            Boolean movementSuccess = move(Movements.byCommand(String.valueOf(command).toLowerCase()));
-            marsMap.render(currentPosition, currentDirection);
-            if(!movementSuccess){
-                this.console.print("Obstacle found! Aborting sequence...");
+            Movements movement = Movements.byCommand(String.valueOf(command).toLowerCase());
+            if(movement != null) {
+                Boolean movementSuccess = move(movement);
+                marsMap.render(currentPosition, currentDirection);
+                if (!movementSuccess) {
+                    this.console.print("Obstacle found! Aborting sequence...");
+                    return false;
+                }
+            } else {
+                this.console.print("Please enter a valid command... " + commandStream + " won't work.");
                 return false;
             }
         }
@@ -32,9 +38,6 @@ public class Rover {
     }
 
     protected Boolean move(Movements movement){
-        if(movement==null)
-            return false;
-
         Position positionProposal = this.currentPosition;
         switch (movement) {
             case FORWARD:
