@@ -121,6 +121,15 @@ class RoverSpec extends Specification {
         rover.direction == Compass.WEST
     }
 
+    def 'Should fail when sending and invalid command' () {
+
+        given: 'A new rover'
+        Rover rover = new Rover(1,1,Compass.NORTH, new Console())
+
+        expect: 'Sending the command "left, right, East, banana, North" should fail'
+        !rover.sendSequence('lrebananan')
+    }
+
     def 'Should stop the rover when found an obstacle' () {
 
         given: 'A new rover'
