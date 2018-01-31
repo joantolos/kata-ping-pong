@@ -114,7 +114,7 @@ public class Rover {
         Integer pointCandidate;
         pointCandidate = point - 1;
         if (pointCandidate <= 0) {
-            pointCandidate = Mars.SIZE;
+            pointCandidate = Mars.SIZE - 1;
         }
         return pointCandidate;
     }
@@ -123,7 +123,7 @@ public class Rover {
         Integer pointCandidate;
         pointCandidate = point + 1;
         if (pointCandidate >= Mars.SIZE) {
-            pointCandidate = 1;
+            pointCandidate = 0;
         }
         return pointCandidate;
     }

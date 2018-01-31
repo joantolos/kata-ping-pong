@@ -8,7 +8,6 @@ import java.util.stream.IntStream;
 
 public class MarsMap {
 
-    private final String OBSTACLE = "\u1040";
     private String[][] coordinates;
 
     public MarsMap(Position position, Compass compass){
@@ -25,7 +24,7 @@ public class MarsMap {
                     if(isPositionAvailable(new Position(x, y))) {
                         coordinates[y][x] = "[   ]";
                     } else {
-                        coordinates[y][x] = "[ " + OBSTACLE + " ]";
+                        coordinates[y][x] = "[ " + Mars.OBSTACLE + " ]";
                     }
                 }
             }
