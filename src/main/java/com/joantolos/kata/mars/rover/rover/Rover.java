@@ -34,7 +34,7 @@ public class Rover {
     protected Boolean move(Movements movement){
         Position positionProposal = this.currentPosition;
         switch (movement) {
-            case BACKWARD:
+            case FORWARD:
                 switch (currentDirection){
                     case NORTH:
                         positionProposal = new Position(this.currentPosition.getX(), this.increment(this.currentPosition.getY()));
@@ -50,7 +50,7 @@ public class Rover {
                         break;
                 }
                 break;
-            case FORWARD:
+            case BACKWARD:
                 switch (currentDirection){
                     case NORTH:
                         positionProposal = new Position(this.currentPosition.getX(), this.decrement(this.currentPosition.getY()));

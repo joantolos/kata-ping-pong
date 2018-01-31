@@ -117,7 +117,7 @@ class RoverSpec extends Specification {
         rover.sendSequence('lrEbNfSW')
 
         then:
-        rover.position == new Position(1, 9)
+        rover.position == new Position(9, 1)
         rover.direction == Compass.WEST
     }
 
