@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class Mars {
 
-    public final static Integer SIZE = 9;
+    public final static Integer SIZE = 10;
     private final static Integer MAX_OBSTACLE_NUM = 4;
     private static List<Position> obstacles = new ArrayList<>();
 

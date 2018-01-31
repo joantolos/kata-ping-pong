@@ -113,7 +113,7 @@ public class Rover {
     private Integer decrement(Integer point) {
         Integer pointCandidate;
         pointCandidate = point - 1;
-        if (pointCandidate < 0) {
+        if (pointCandidate <= 0) {
             pointCandidate = Mars.SIZE;
         }
         return pointCandidate;
@@ -122,8 +122,8 @@ public class Rover {
     private Integer increment(Integer point) {
         Integer pointCandidate;
         pointCandidate = point + 1;
-        if (pointCandidate > Mars.SIZE) {
-            pointCandidate = 0;
+        if (pointCandidate >= Mars.SIZE) {
+            pointCandidate = 1;
         }
         return pointCandidate;
     }
