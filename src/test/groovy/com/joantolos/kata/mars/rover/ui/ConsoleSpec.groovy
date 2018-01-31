@@ -1,7 +1,5 @@
 package com.joantolos.kata.mars.rover.ui
 
-import com.joantolos.kata.mars.rover.domain.Position
-import com.joantolos.kata.mars.rover.rover.MarsMap
 import com.joantolos.kata.mars.rover.rover.Rover
 import com.joantolos.kata.mars.rover.utils.Compass
 import spock.lang.Specification

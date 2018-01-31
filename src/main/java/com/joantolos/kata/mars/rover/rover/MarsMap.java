@@ -17,19 +17,19 @@ public class MarsMap {
     }
 
     public void render(Position position, Compass compass) {
-        IntStream.range(1, Mars.SIZE).forEach(currentX -> {
-            IntStream.range(1, Mars.SIZE).forEach(currentY -> {
-                if(currentX == position.getX() && currentY == position.getY()){
-                    coordinates[currentX][currentY] = "[ " + compass.getSymbol() + " ]";
+        for(int x = Mars.SIZE - 1; x >= 0; x--){
+            for(int y = 0; y < Mars.SIZE; y++){
+                if(x == position.getX() && y == position.getY()){
+                    coordinates[y][x] = "[ " + compass.getSymbol() + " ]";
                 } else {
-                    if(isPositionAvailable(new Position(currentX, currentY))) {
-                        coordinates[currentX][currentY] = "[   ]";
+                    if(isPositionAvailable(new Position(x, y))) {
+                        coordinates[y][x] = "[   ]";
                     } else {
-                        coordinates[currentX][currentY] = "[ " + OBSTACLE + " ]";
+                        coordinates[y][x] = "[ " + OBSTACLE + " ]";
                     }
                 }
-            });
-        });
+            }
+        }
     }
 
     public Boolean isPositionAvailable(Position position){

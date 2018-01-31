@@ -10,7 +10,7 @@ public class MarsRover {
 
     public static void main(String[] args){
         Console console = new Console();
-        Rover rover = new Rover(1,1, Compass.NORTH, console);
+        Rover rover = new Rover(0,0, Compass.NORTH, console);
         String commandSequence;
 
         console.prompt();
