@@ -6,8 +6,6 @@ public enum Movements {
 
     FORWARD("f"),
     BACKWARD("b"),
-    LEFT("l"),
-    RIGHT("r"),
     NORTH("n"),
     SOUTH("s"),
     EAST("e"),

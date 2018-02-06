@@ -62,59 +62,13 @@ class RoverSpec extends Specification {
         1           |   1           ||   Compass.EAST       |   9           |   1
     }
 
-    def 'Mars Rover should move left' () {
-
-        given: 'Moving a new rover left'
-        Rover rover = new Rover(startingX, startingY, direction, new Console())
-        rover.move(Movements.LEFT)
-
-        expect: 'The correct position'
-        rover.getPosition().x == expectingX
-        rover.getPosition().y == expectingY
-
-        where: 'The rover is facing all possible directions'
-        startingX   |   startingY   ||   direction          |   expectingX  |   expectingY
-        1           |   1           ||   Compass.NORTH      |   9           |   1
-        1           |   1           ||   Compass.SOUTH      |   2           |   1
-        1           |   1           ||   Compass.EAST       |   1           |   2
-        1           |   1           ||   Compass.WEST       |   1           |   9
-
-        1           |   1           ||   Compass.NORTH      |   9           |   1
-        9           |   9           ||   Compass.SOUTH      |   0           |   9
-        1           |   1           ||   Compass.WEST       |   1           |   9
-        9           |   9           ||   Compass.EAST       |   9           |   0
-    }
-
-    def 'Mars Rover should move right' () {
-
-        given: 'Moving a new rover right'
-        Rover rover = new Rover(startingX, startingY, direction, new Console())
-        rover.move(Movements.RIGHT)
-
-        expect: 'The correct position'
-        rover.getPosition().x == expectingX
-        rover.getPosition().y == expectingY
-
-        where: 'The rover is facing all possible directions'
-        startingX   |   startingY   ||   direction          |   expectingX  |   expectingY
-        1           |   1           ||   Compass.NORTH      |   2           |   1
-        1           |   1           ||   Compass.SOUTH      |   9           |   1
-        1           |   1           ||   Compass.EAST       |   1           |   9
-        1           |   1           ||   Compass.WEST       |   1           |   2
-
-        1           |   1           ||   Compass.SOUTH      |   9           |   1
-        9           |   9           ||   Compass.NORTH      |   0           |   9
-        1           |   1           ||   Compass.EAST       |   1           |   9
-        9           |   9           ||   Compass.WEST       |   9           |   0
-    }
-
     def 'Should send command stream to rover' () {
 
         given: 'A new rover'
         Rover rover = new Rover(1,1,Compass.NORTH, new Console())
 
-        when: 'Sending the command "left, right, East, backwards, North, forwards, South, West"'
-        rover.sendSequence('lrEbNfSW')
+        when: 'Sending the command "forwards, backwards, East, backwards, North, forwards, South, West"'
+        rover.sendSequence('fbEbNfSW')
 
         then:
         rover.position == new Position(9, 2)
@@ -126,8 +80,8 @@ class RoverSpec extends Specification {
         given: 'A new rover'
         Rover rover = new Rover(1,1,Compass.NORTH, new Console())
 
-        expect: 'Sending the command "left, right, East, banana, North" should fail'
-        !rover.sendSequence('lrebananan')
+        expect: 'Sending the command "forwards, backwards, East, banana, North" should fail'
+        !rover.sendSequence('fbebananan')
     }
 
     def 'Should stop the rover when found an obstacle' () {
@@ -140,11 +94,11 @@ class RoverSpec extends Specification {
 
         for(int i=1; i<= Mars.SIZE; i++){
             for(int j=1; j<= Mars.SIZE; j++){
-                if(!rover.sendSequence('r'))
+                if(!rover.sendSequence('f'))
                     break
                 numberOfMovementsMade++
             }
-            if(!rover.sendSequence('f'))
+            if(!rover.sendSequence('EfS'))
                 break
         }
 
