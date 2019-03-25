@@ -30,7 +30,7 @@ allprojects {
         reports {
             xml.enabled false
             csv.enabled false
-            html.destination "${buildDir}/jacoco/reports/coverage/html"
+            html.destination "${buildDir}/reports/coverage"
         }
 
         afterEvaluate {
@@ -42,7 +42,11 @@ allprojects {
     }
 
     dependencies {
-        testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-2"
+        testCompile (
+            'org.spockframework:spock-core:1.1-groovy-2.4-rc-2',
+            'info.cukes:cucumber-java8:1.2.5',
+            'info.cukes:cucumber-junit:1.2.5'
+        )
     }
 
     task fatJar(type: Jar) {
