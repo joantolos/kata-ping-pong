@@ -1,9 +1,9 @@
-package com.joantolos.kata.mars.rover.rover;
+package com.joantolos.kata.mars.rover.domain;
 
-import com.joantolos.kata.mars.rover.domain.Mars;
-import com.joantolos.kata.mars.rover.domain.Position;
+import com.joantolos.kata.mars.rover.tools.Compass;
 import com.joantolos.kata.mars.rover.ui.Console;
-import com.joantolos.kata.mars.rover.utils.Compass;
+
+import java.io.IOException;
 
 public class Rover {
 
@@ -12,7 +12,7 @@ public class Rover {
     private Compass currentDirection;
     private Console console;
 
-    public Rover(Integer x, Integer y, Compass direction, Console console){
+    public Rover(Integer x, Integer y, Compass direction, Console console) throws IOException {
         this.currentPosition = new Position(x, y);
         this.currentDirection = direction;
         this.console = console;
@@ -37,7 +37,7 @@ public class Rover {
         return true;
     }
 
-    protected Boolean move(Movements movement){
+    public Boolean move(Movements movement){
         Position positionProposal = this.currentPosition;
         switch (movement) {
             case FORWARD:
@@ -96,7 +96,7 @@ public class Rover {
         Integer pointCandidate;
         pointCandidate = point - 1;
         if (pointCandidate <= 0) {
-            pointCandidate = Mars.SIZE - 1;
+            pointCandidate = marsMap.getSize() - 1;
         }
         return pointCandidate;
     }
@@ -104,7 +104,7 @@ public class Rover {
     private Integer increment(Integer point) {
         Integer pointCandidate;
         pointCandidate = point + 1;
-        if (pointCandidate >= Mars.SIZE) {
+        if (pointCandidate >= marsMap.getSize()) {
             pointCandidate = 0;
         }
         return pointCandidate;

@@ -1,7 +1,8 @@
 package com.joantolos.kata.mars.rover.rover
 
+import com.joantolos.kata.mars.rover.domain.MarsMap
 import com.joantolos.kata.mars.rover.domain.Position
-import com.joantolos.kata.mars.rover.utils.Compass
+import com.joantolos.kata.mars.rover.tools.Compass
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -30,5 +31,11 @@ class MarsMapSpec extends Specification {
     def 'Mars map should return initial position' () {
         given: 'I mark the new Mars rover position'
         new MarsMap(new Position(0,0), Compass.NORTH)
+    }
+
+    def 'Mars map should return a printable map' () {
+        given: 'I mark the new Mars rover position'
+        MarsMap map = new MarsMap(new Position(0,0), Compass.NORTH)
+        map.printable() != null
     }
 }

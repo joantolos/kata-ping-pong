@@ -1,9 +1,6 @@
 package com.joantolos.kata.mars.rover.ui;
 
 import com.joantolos.kata.mars.rover.domain.Mars;
-import com.joantolos.kata.mars.rover.rover.Rover;
-
-import java.util.stream.IntStream;
 
 public class Console {
 
@@ -37,13 +34,4 @@ public class Console {
         return true;
     }
 
-    public Boolean printMap(Rover rover){
-        for(int x = Mars.SIZE - 1; x >= 0; x--){
-            for(int y = 0; y < Mars.SIZE ; y++){
-                System.out.print(rover.getMarsMap().getCoordinates()[x][y]);
-            }
-            System.out.println();
-        }
-        return true;
-    }
 }

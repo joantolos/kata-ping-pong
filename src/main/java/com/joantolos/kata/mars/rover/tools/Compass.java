@@ -1,4 +1,4 @@
-package com.joantolos.kata.mars.rover.utils;
+package com.joantolos.kata.mars.rover.tools;
 
 public enum Compass {
 

@@ -1,4 +1,4 @@
-package com.joantolos.kata.mars.rover.rover;
+package com.joantolos.kata.mars.rover.domain;
 
 import java.util.Objects;
 import java.util.stream.Stream;

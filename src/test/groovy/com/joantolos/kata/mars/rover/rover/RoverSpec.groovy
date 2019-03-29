@@ -1,12 +1,23 @@
 package com.joantolos.kata.mars.rover.rover
 
-import com.joantolos.kata.mars.rover.domain.Mars
+import com.joantolos.kata.mars.rover.domain.MarsMap
+import com.joantolos.kata.mars.rover.domain.Movements
 import com.joantolos.kata.mars.rover.domain.Position
+import com.joantolos.kata.mars.rover.domain.Rover
+import com.joantolos.kata.mars.rover.tools.Compass
 import com.joantolos.kata.mars.rover.ui.Console
-import com.joantolos.kata.mars.rover.utils.Compass
+import spock.lang.Shared
 import spock.lang.Specification
 
 class RoverSpec extends Specification {
+
+    @Shared MarsMap map
+
+    def setupSpec() {
+        Movements.valueOf(Movements.BACKWARD.toString())
+        Compass.valueOf(Compass.NORTH.toString())
+        map = new MarsMap(new Position(0,0), Compass.NORTH)
+    }
 
     def 'Mars Rover should return its location' () {
         given:
@@ -17,7 +28,6 @@ class RoverSpec extends Specification {
     }
 
     def 'Mars Rover should move forwards when facing every direction, including edge positions' () {
-
         given: 'Moving a new rover forwards'
         Rover rover = new Rover(startingX, startingY, direction, new Console())
         rover.move(Movements.FORWARD)
@@ -40,7 +50,6 @@ class RoverSpec extends Specification {
     }
 
     def 'Mars Rover should move backwards when facing every direction, including edge positions' () {
-
         given: 'Moving a new rover backwards'
         Rover rover = new Rover(startingX, startingY, direction, new Console())
         rover.move(Movements.BACKWARD)
@@ -63,7 +72,6 @@ class RoverSpec extends Specification {
     }
 
     def 'Should send command stream to rover' () {
-
         given: 'A new rover'
         Rover rover = new Rover(1,1,Compass.NORTH, new Console())
 
@@ -76,7 +84,6 @@ class RoverSpec extends Specification {
     }
 
     def 'Should fail when sending and invalid command' () {
-
         given: 'A new rover'
         Rover rover = new Rover(1,1,Compass.NORTH, new Console())
 
@@ -85,15 +92,14 @@ class RoverSpec extends Specification {
     }
 
     def 'Should stop the rover when found an obstacle' () {
-
         given: 'A new rover'
         Rover rover = new Rover(1,1,Compass.NORTH, new Console())
 
         when: 'Moving the rover to all possible positions'
         Integer numberOfMovementsMade = 0
 
-        for(int i=1; i<= Mars.SIZE; i++){
-            for(int j=1; j<= Mars.SIZE; j++){
+        for(int i=1; i<= rover.getMarsMap().getSize(); i++){
+            for(int j=1; j<= rover.getMarsMap().getSize(); j++){
                 if(!rover.sendSequence('f'))
                     break
                 numberOfMovementsMade++
@@ -103,7 +109,7 @@ class RoverSpec extends Specification {
         }
 
         then: 'The number of movements should be less than the total square number'
-        Integer maximumSquaresPossible = Mars.SIZE * Mars.SIZE
+        Integer maximumSquaresPossible = rover.getMarsMap().getSize() * rover.getMarsMap().getSize()
         numberOfMovementsMade < maximumSquaresPossible
     }
 }
