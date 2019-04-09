@@ -1,0 +1,8 @@
+rootProject.name = 'kata-ping-pong'
+
+include ':kata-ping-pong-src:kata-ping-pong-domain',
+        ':kata-ping-pong-src:kata-ping-pong-server'
+
+include ':kata-ping-pong-test:kata-ping-pong-integration-test',
+        ':kata-ping-pong-test:kata-ping-pong-acceptance-test',
+        ':kata-ping-pong-test:kata-ping-pong-performance-test'

@@ -1,0 +1,50 @@
+plugins {
+    id 'groovy'
+    id 'jacoco'
+}
+
+repositories {
+    jcenter()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testCompile (
+            'org.spockframework:spock-core:1.1-groovy-2.4-rc-2',
+            'info.cukes:cucumber-java8:1.2.5',
+            'info.cukes:cucumber-junit:1.2.5'
+    )
+
+    compile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+}
+
+jacoco {
+    toolVersion = "0.7.6+"
+    reportsDir = file("${project.buildDir}/jacoco/reports")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/reports/coverage")
+    }
+
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ['com/joantolos/kata/pingpong/server/PingPong*'])
+        })
+    }
+}
+
+task fatJar(type: Jar) {
+    manifest { attributes'Main-Class': 'com.joantolos.kata.pingpong.server.PingPong' }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+build.finalizedBy(jacocoTestReport, fatJar)
