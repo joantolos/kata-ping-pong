@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-10T12:44:04" hostname="joans-MacBook-Pro.local" time="0.048">
+  <properties/>
+  <testcase name="Should respond ping at least once when playing" classname="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" time="0.046"/>
+  <testcase name="Should respond pong at least once when playing" classname="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
