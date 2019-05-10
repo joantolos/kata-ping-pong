@@ -55,10 +55,6 @@ public class StringUtils {
         return org.apache.commons.lang.StringUtils.isEmpty(string);
     }
 
-    public static boolean isNotEmpty(String string){
-        return org.apache.commons.lang.StringUtils.isNotEmpty(string);
-    }
-
     public static String removeQuotes(String value) {
         if (isSurroundedByQuotes(value)) {
             value = value.substring(1, value.length() - 1);
@@ -66,11 +62,8 @@ public class StringUtils {
         return value;
     }
 
-    public static boolean isSurroundedByQuotes(String value) {
+    private static boolean isSurroundedByQuotes(String value) {
         return value.startsWith("\"") && value.endsWith("\"");
     }
 
-    public static int countMatches(String str, String sub) {
-        return org.apache.commons.lang.StringUtils.countMatches(str, sub);
-    }
 }

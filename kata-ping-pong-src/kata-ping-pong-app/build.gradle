@@ -19,7 +19,7 @@ jar {
 
 bootJar {
     mainClassName = 'com.joantolos.kata.pingpong.server.PingPong'
-    baseName = 'ls-search'
+    baseName = 'kata-ping-pong'
     version =  '1.0.0'
 }
 

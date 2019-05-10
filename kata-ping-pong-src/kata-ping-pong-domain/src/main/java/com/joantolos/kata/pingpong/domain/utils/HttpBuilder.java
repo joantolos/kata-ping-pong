@@ -17,7 +17,7 @@ public class HttpBuilder {
         return this.build(jsonByDefault(), data);
     }
 
-    public ResponseEntity build(MultivaluedMap<String, String> headers, String data) {
+    private ResponseEntity build(MultivaluedMap<String, String> headers, String data) {
         HttpHeaders springHeaders = new HttpHeaders();
         if(headers!=null && !headers.isEmpty()) {
             for (String key : headers.keySet()) {
