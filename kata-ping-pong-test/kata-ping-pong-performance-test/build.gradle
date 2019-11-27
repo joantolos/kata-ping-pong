@@ -19,14 +19,14 @@ dependencies {
 
 }
 
-task runPerformanceSimulation(dependsOn: 'compileTestScala') << {
-    javaexec {
-        main = 'io.gatling.app.Gatling'
-        jvmArgs = ["-DtestExec=${System.getProperty('testExec')}"]
-        classpath = sourceSets.test.output + sourceSets.test.runtimeClasspath
-        args    '-sf', sourceSets.test.output,                      //source folder
-                '-bf', sourceSets.test.output.classesDir,           //target folder where gatling will compile the simulation
-                '-s', 'LsSearchPerformanceTest',         //The simulation to run
-                '-rf', '../../build/reports/performance/'   //place to put the report
-    }
-}
+//task runPerformanceSimulation(dependsOn: 'compileTestScala') << {
+//    javaexec {
+//        main = 'io.gatling.app.Gatling'
+//        jvmArgs = ["-DtestExec=${System.getProperty('testExec')}"]
+//        classpath = sourceSets.test.output + sourceSets.test.runtimeClasspath
+//        args    '-sf', sourceSets.test.output,                      //source folder
+//                '-bf', sourceSets.test.output.classesDir,           //target folder where gatling will compile the simulation
+//                '-s', 'LsSearchPerformanceTest',         //The simulation to run
+//                '-rf', '../../build/reports/performance/'   //place to put the report
+//    }
+//}

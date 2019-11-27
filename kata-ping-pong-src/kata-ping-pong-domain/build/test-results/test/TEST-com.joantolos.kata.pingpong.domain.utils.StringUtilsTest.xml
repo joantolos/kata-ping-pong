@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2019-11-27T15:12:24" hostname="Joans-MBP-2.mm-ads.com" time="0.037">
+  <properties/>
+  <testcase name="shouldBeTrueWhenEmpty" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.015"/>
+  <testcase name="removeQuotesTest" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.0"/>
+  <testcase name="toInputStreamTest" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.001"/>
+  <testcase name="objectToStringTest" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.005"/>
+  <testcase name="secureSubstringTargetLastAppearanceTest" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.0"/>
+  <testcase name="shouldDoNothingWhenNotOnQuotes" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.0"/>
+  <testcase name="shouldRemoveQuotes" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.0"/>
+  <testcase name="shouldConvertStringToByteArray" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.01"/>
+  <testcase name="shouldBeFalseWhenNotEmpty" classname="com.joantolos.kata.pingpong.domain.utils.StringUtilsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

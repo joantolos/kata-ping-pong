@@ -37,7 +37,6 @@ subprojects {
             xml.enabled true
             html.enabled true
             csv.enabled false
-            html.destination "${project.buildDir}/coverage/reports/coverage/html"
         }
     }
 
@@ -59,30 +58,22 @@ project('kata-ping-pong-test:kata-ping-pong-performance-test') {
     }
 }
 
-task rootReport(type: JacocoReport) {
-    dependsOn = subprojects.test
-    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
-    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories = files(subprojects.sourceSets.main.output)
-    executionData = files(subprojects.jacocoTestReport.executionData)
-    reports {
-        html.enabled = true
-        xml.enabled = true
-        csv.enabled = false
-    }
-    onlyIf = {
-        true
-    }
-    doFirst {
-        executionData = files(executionData.findAll {
-            it.exists()
-        })
-    }
-    afterEvaluate {
-        classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ['**/com/joantolos/kata/pingpong/app/PingPongApp**'])
-        })
-    }
-}
-
-build.finalizedBy(rootReport)
+//task rootReport(type: JacocoReport) {
+//    dependsOn = subprojects.test
+//
+//    reports {
+//        html.enabled = true
+//        xml.enabled = true
+//        csv.enabled = false
+//    }
+//    onlyIf = {
+//        true
+//    }
+//    doFirst {
+//        executionData = files(executionData.findAll {
+//            it.exists()
+//        })
+//    }
+//}
+//
+//build.finalizedBy(rootReport)
