@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.joantolos.kata.pingpong.domain.utils.HttpBuilderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-27T15:12:24" hostname="Joans-MBP-2.mm-ads.com" time="0.091">
+<testsuite name="com.joantolos.kata.pingpong.domain.utils.HttpBuilderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-27T15:31:07" hostname="Joans-MBP-2.mm-ads.com" time="0.045">
   <properties/>
-  <testcase name="shouldBuildServerErrorResponse" classname="com.joantolos.kata.pingpong.domain.utils.HttpBuilderTest" time="0.091"/>
+  <testcase name="shouldBuildServerErrorResponse" classname="com.joantolos.kata.pingpong.domain.utils.HttpBuilderTest" time="0.045"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

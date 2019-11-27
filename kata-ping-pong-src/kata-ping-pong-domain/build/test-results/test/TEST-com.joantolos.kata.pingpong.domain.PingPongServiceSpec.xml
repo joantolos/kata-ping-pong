@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-11-27T15:12:25" hostname="Joans-MBP-2.mm-ads.com" time="0.04">
+<testsuite name="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-11-27T15:31:07" hostname="Joans-MBP-2.mm-ads.com" time="0.072">
   <properties/>
-  <testcase name="Should respond ping at least once when playing" classname="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" time="0.038"/>
+  <testcase name="Should respond ping at least once when playing" classname="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" time="0.07"/>
   <testcase name="Should respond pong at least once when playing" classname="com.joantolos.kata.pingpong.domain.PingPongServiceSpec" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
