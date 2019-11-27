@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.051s</div>
+<div class="counter">0.039s</div>
 <p>duration</p>
 </div>
 </td>
@@ -84,12 +84,12 @@
 </tr>
 <tr>
 <td class="success">Then the response at the json path &quot;move&quot; includes &quot;Ping!&quot; or &quot;Pong!&quot;</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">classMethod</td>
-<td class="success">0.050s</td>
+<td class="success">0.039s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,16 +97,16 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2019-11-27 16:31:20.767  INFO 18378 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [PingPongAcceptance]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-11-27 16:31:20.769  INFO 18378 --- [    Test worker] o.s.t.c.s.TestPropertySourceAttributes   : Detected default properties file &quot;classpath:PingPongAcceptance.properties&quot; for test class [PingPongAcceptance]
-2019-11-27 16:31:20.772  INFO 18378 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2019-11-27 16:31:20.774  INFO 18378 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@bec7684, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@300610b4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4a24e037, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@359665d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6b6978e4, org.springframework.test.context.event.EventPublishingTestExecutionListener@6b6a568d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@622268f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4e01c398, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6e0f3ce4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@57e8c196, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@40e993ba]
+<pre>2019-11-27 17:05:24.754  INFO 18829 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [PingPongAcceptance]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-11-27 17:05:24.756  INFO 18829 --- [    Test worker] o.s.t.c.s.TestPropertySourceAttributes   : Detected default properties file &quot;classpath:PingPongAcceptance.properties&quot; for test class [PingPongAcceptance]
+2019-11-27 17:05:24.758  INFO 18829 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2019-11-27 17:05:24.759  INFO 18829 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7f4c50b7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@59a382e4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@70b343c6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@11d57228, org.springframework.test.context.support.DirtiesContextTestExecutionListener@c01514d, org.springframework.test.context.event.EventPublishingTestExecutionListener@4970468b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@23b78110, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1949e37c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1fc45221, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@54cb0b4c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4b6bbfc4]
 
   @Pong
   Scenario: Checking if the service does pong                         ?[90m# game.feature:9?[0m
     ?[32mGiven ?[0m?[32mI perform a &quot;?[0m?[32m?[1mGET?[0m?[32m&quot; to &quot;?[0m?[32m?[1mhttp://localhost:7111/pong?[0m?[32m&quot; end point?[0m ?[90m# PingPongAcceptance.java:25?[0m
     ?[32mThen ?[0m?[32mthe response at the json path &quot;?[0m?[32m?[1mmove?[0m?[32m&quot; includes &quot;?[0m?[32m?[1mPong!?[0m?[32m&quot;?[0m        ?[90m# PingPongAcceptance.java:29?[0m
-2019-11-27 16:31:20.791  INFO 18378 --- [nio-7111-exec-3] c.j.k.p.a.controller.PingPongController  : 	 *** /play endpoint called
+2019-11-27 17:05:24.774  INFO 18829 --- [nio-7111-exec-3] c.j.k.p.a.controller.PingPongController  : 	 *** /play endpoint called
 </pre>
 </span>
 </div>
@@ -118,7 +118,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.0.1</a> at Nov 27, 2019 4:31:21 PM</p>
+<a href="http://www.gradle.org">Gradle 6.0.1</a> at Nov 27, 2019 5:05:25 PM</p>
 </div>
 </div>
 </body>

@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 368909785,
+  "duration": 277391769,
   "status": "passed"
 });
 formatter.scenario({
@@ -48,7 +48,7 @@ formatter.match({
   "location": "PingPongAcceptance.java:25"
 });
 formatter.result({
-  "duration": 995641437,
+  "duration": 871617640,
   "status": "passed"
 });
 formatter.match({
@@ -65,11 +65,11 @@ formatter.match({
   "location": "PingPongAcceptance.java:29"
 });
 formatter.result({
-  "duration": 624418817,
+  "duration": 558045270,
   "status": "passed"
 });
 formatter.before({
-  "duration": 326029,
+  "duration": 398217,
   "status": "passed"
 });
 formatter.scenario({
@@ -110,7 +110,7 @@ formatter.match({
   "location": "PingPongAcceptance.java:25"
 });
 formatter.result({
-  "duration": 17507873,
+  "duration": 21387567,
   "status": "passed"
 });
 formatter.match({
@@ -127,11 +127,11 @@ formatter.match({
   "location": "PingPongAcceptance.java:29"
 });
 formatter.result({
-  "duration": 11708979,
+  "duration": 9415882,
   "status": "passed"
 });
 formatter.before({
-  "duration": 383414,
+  "duration": 287026,
   "status": "passed"
 });
 formatter.scenario({
@@ -172,7 +172,7 @@ formatter.match({
   "location": "PingPongAcceptance.java:25"
 });
 formatter.result({
-  "duration": 14886702,
+  "duration": 12941555,
   "status": "passed"
 });
 formatter.match({
@@ -193,7 +193,7 @@ formatter.match({
   "location": "PingPongAcceptance.java:32"
 });
 formatter.result({
-  "duration": 18228907,
+  "duration": 13641684,
   "status": "passed"
 });
 });
